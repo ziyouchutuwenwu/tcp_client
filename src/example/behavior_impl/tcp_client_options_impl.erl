@@ -9,7 +9,7 @@ get_tcp_options() ->
 		{active, false},
 
 		binary,
-		{packet, 4},
+		{packet, 2},
 
 		{nodelay, true},
 		{send_timeout, 50 * 1000},
