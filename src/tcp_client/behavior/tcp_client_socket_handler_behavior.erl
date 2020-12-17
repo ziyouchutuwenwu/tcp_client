@@ -1,4 +1,4 @@
--module(socket_handler_behavior).
+-module(tcp_client_socket_handler_behavior).
 
 -callback on_server_connected(Socket :: port(), IP :: atom(), Port :: integer()) ->
   noreplay.

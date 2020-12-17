@@ -1,4 +1,4 @@
--module(socket_codec_behavior).
+-module(tcp_client_socket_codec_behavior).
 
 -callback encode(DataBytes :: any()) ->
   DataBytes :: any().

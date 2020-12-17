@@ -1,6 +1,6 @@
 -module(demo_client_socket_handler_impl).
 
--behaviour(socket_handler_behavior).
+-behaviour(tcp_client_socket_handler_behavior).
 
 -export([on_server_connected/3, on_server_data/3, on_disconnected/2]).
 
