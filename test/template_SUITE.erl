@@ -8,9 +8,9 @@
 suite() ->
   [
     {timetrap, {seconds, 20}},
-      {userdata,[
-        {info, "this is a common test template."}
-      ]}
+    {userdata, [
+      {info, "this is a common test template."}
+    ]}
   ].
 
 groups() ->
@@ -36,19 +36,19 @@ end_per_suite(_Config) ->
   ok.
 
 init_per_group(Group, Config) ->
-  ct:log("init_per_group~p~n",[Group]),
+  ct:log("init_per_group~p~n", [Group]),
   Config.
 
 end_per_group(Group, Config) ->
-  ct:log("end_per_group~p~n",[Group]),
+  ct:log("end_per_group~p~n", [Group]),
   Config.
 
 init_per_testcase(TestCase, Config) ->
-  ct:log("init_per_testcase~p~n",[TestCase]),
+  ct:log("init_per_testcase~p~n", [TestCase]),
   Config.
 
 end_per_testcase(TestCase, Config) ->
-  ct:log("end_per_testcase~p~n",[TestCase]),
+  ct:log("end_per_testcase~p~n", [TestCase]),
   Config.
 
 %% --------------------------------------------------------
@@ -58,12 +58,12 @@ test_case1(_Config) ->
 
 test_case2(_Config) ->
   ct:log("in test_case2~n"),
-  1=1.
+  1 = 1.
 
 test_case3(_Config) ->
   ct:log("in test_case3~n"),
-  1=1.
+  1 = 1.
 
 test_case4(_Config) ->
   ct:log("in test_case4~n"),
-  1=1.
+  1 = 1.
