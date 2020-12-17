@@ -1,15 +1,16 @@
 {application, tcp_client,
- [{description, "An OTP library"},
+ [{description, "An OTP application"},
   {vsn, "0.1.0"},
   {registered, []},
+  {mod, {tcp_client_app, []}},
   {applications,
    [kernel,
-    stdlib
+    stdlib,
+    useful_tools
    ]},
   {env,[]},
   {modules, []},
 
-  {maintainers, []},
-  {licenses, []},
+  {licenses, ["Apache 2.0"]},
   {links, []}
  ]}.

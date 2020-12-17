@@ -1,0 +1,4 @@
+[{<<"useful_tools">>,
+  {git,"https://github.com/ziyouchutuwenwu/useful_tools",
+       {ref,"66e0deed5428399d54d6e77471f2d85e96c30dd4"}},
+  0}].

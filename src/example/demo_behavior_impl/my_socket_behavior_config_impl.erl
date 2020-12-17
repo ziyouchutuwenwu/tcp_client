@@ -8,6 +8,7 @@ get_socket_handler_module() ->
 get_socket_codec_module() ->
 	socket_codec_impl.
 
+%% 业务级别拆包
 get_socket_package_module() ->
 	socket_package_impl.
 
