@@ -5,6 +5,5 @@
 main(Args) ->
   io:format("~n"),
   io:format("*********************************************************~n"),
-  io:format("on app start~n"),
-  io:format("*********************************************************~n"),
+  io:format("try socket_client_demo:start().~n"),
   io:format("~n").

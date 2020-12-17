@@ -67,12 +67,13 @@ handle_info(timeout, #socket_info_record{config_behavior = ConfigBehavior, serve
       RecvTimerRef = erlang:send_after(OptionsModule:get_tcp_recv_timeout(), self(), recv_time_out),
 
       %%和服务器连接成功
-      {ok, {IP, ConnectedPort}} = inet:peername(Socket),
+      {ok, {ServerIp, ServerPort}} = inet:peername(Socket),
+      ServerIpStr = inet:ntoa(ServerIp),
       SocketHandlerModule = ConfigBehavior:get_socket_handler_module(),
-      SocketHandlerModule:on_server_connected(Socket, IP, ConnectedPort),
+      SocketHandlerModule:on_server_connected(Socket, ServerIpStr, ServerPort),
 
       {noreply, State#socket_info_record{
-        socket = Socket, server_ip = Ip, server_port = ConnectedPort,
+        socket = Socket, server_ip = ServerIpStr, server_port = ServerPort,
         recv_timer_ref = RecvTimerRef, recv_timeout_count = RecvTimeoutCount}
       };
     {error, Reason} ->
