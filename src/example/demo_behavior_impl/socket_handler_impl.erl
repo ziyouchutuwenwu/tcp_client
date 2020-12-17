@@ -6,7 +6,7 @@
 
 on_server_connected(Socket, IP, Port) ->
     io:format("连接服务器~p:~p成功~n",[IP, Port]),
-    socket_client_demo:send(Socket),
+%%    socket_client_demo:send(Socket),
     noreplay.
 
 on_server_data(_Socket, Cmd, InfoBin) ->

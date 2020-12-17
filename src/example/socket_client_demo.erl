@@ -7,4 +7,4 @@ start()->
 
 %% 需要的时候，手动在 on_server_connected 的实现 里面调用
 send(Socket)->
-    tcp_client:send_socket_msg(Socket, 111, <<"this is info">>, my_socket_behavior_config_impl).
+    tcp_client:send_socket_msg(Socket, 111, <<"hello from client">>, my_socket_behavior_config_impl).
