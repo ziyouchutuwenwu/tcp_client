@@ -1,4 +1,4 @@
--module(socket_client_demo).
+-module(tcp_client_demo).
 
 -export([start/0, send/1]).
 
