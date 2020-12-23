@@ -5,5 +5,5 @@
 main(Args) ->
   io:format("~n"),
   io:format("*********************************************************~n"),
-  io:format("try socket_client_demo:start().~n"),
+  io:format("try tcp_client_demo:start().~n"),
   io:format("~n").
