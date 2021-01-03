@@ -1,10 +1,13 @@
 -module(tcp_client_demo).
 
--export([start/0, send/1]).
+-export([start/0, send_by_socket/1, send_by_pid/1]).
 
 start() ->
   tcp_client:start("robot", {"127.0.0.1", 9999}, 2, demo_client_socket_behavior_config_impl).
 
-%% 需要的时候，手动在 on_server_connected 的实现 里面调用
-send(Socket) ->
-  tcp_client:send_socket_msg(Socket, 111, <<"hello from client">>, demo_client_socket_behavior_config_impl).
+%% 需要的时候，手动调用
+send_by_socket(Socket) ->
+  tcp_client_send:send_data_by_socket(Socket, 111, <<"msg send by socket">>, demo_client_socket_behavior_config_impl).
+
+send_by_pid(Pid) ->
+  tcp_client_send:send_data_by_pid(Pid, 111, <<"msg send by pid">>).

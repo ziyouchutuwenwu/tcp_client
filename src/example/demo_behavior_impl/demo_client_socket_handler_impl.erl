@@ -4,9 +4,10 @@
 
 -export([on_server_connected/3, on_server_data/3, on_disconnected/2]).
 
-on_server_connected(_Socket, IP, Port) ->
+on_server_connected(Socket, IP, Port) ->
   io:format("连接服务器 ~ts:~p 成功~n", [IP, Port]),
-%%  tcp_client_demo:send(Socket),
+  tcp_client_demo:send_by_socket(Socket),
+  tcp_client_demo:send_by_pid(self()),
   noreplay.
 
 on_server_data(_Socket, Cmd, InfoBin) ->

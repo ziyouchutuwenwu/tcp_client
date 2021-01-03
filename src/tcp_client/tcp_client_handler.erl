@@ -15,8 +15,12 @@ init([{Ip, Port}, ConfigBehavior]) ->
 handle_call(Msg, _From, State) ->
   {reply, {ok, Msg}, State}.
 
+%% 发数据包
+handle_cast({send_socket_msg, Cmd, InfoBin}, #socket_info_record{config_behavior = ConfigBehavior, socket = Socket} = State) ->
+  tcp_client_send:send_data_by_socket(Socket, Cmd, InfoBin, ConfigBehavior),
+  {noreply, State};
+
 handle_cast(stop, State) ->
-  io:format("stop~n"),
   {stop, normal, State}.
 
 handle_info({tcp, Socket, Data}, #socket_info_record{config_behavior = ConfigBehavior, recv_timer_ref = OldRecvTimerRef} = State) ->
