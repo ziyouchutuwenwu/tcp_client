@@ -26,11 +26,11 @@ get_active_count() ->
 
 %% 50秒超时
 get_tcp_recv_timeout() ->
-  5 * 1000.
+  50 * 1000.
 
 %% 允许超时多少次
 get_tcp_recv_timeout_count() ->
-  2.
+  2000.
 
 get_tcp_conn_timeout() ->
   3600 * 1000.
