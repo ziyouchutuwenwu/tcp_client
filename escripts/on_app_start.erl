@@ -1,9 +1,11 @@
 -module(on_app_start).
 
+-export([main/1]).
+-export([interprete_modules/0]).
+
 main(_Args) ->
   io:format("~n"),
-  interprete_modules(),
-  io:format("try tcp_client_demo:start().~n").
+  interprete_modules().
 
 interprete_modules() ->
   int:ni(utf8_list),
