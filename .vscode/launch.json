@@ -8,11 +8,11 @@
         "rebar3",
         "shell",
         "--name",
-        "debug@localhost",
+        "tcp_client@localhost",
         "--setcookie",
         "123456"
       ],
-      "projectnode": "debug@localhost",
+      "projectnode": "tcp_client@localhost",
       "cookie": "123456",
       "timeout": 300,
       "cwd": "${workspaceRoot}"

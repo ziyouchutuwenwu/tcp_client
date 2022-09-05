@@ -3,7 +3,7 @@
 -export([start/0, tcp_opts/0, send_by_socket/1]).
 
 tcp_opts() ->
-    [binary, {packet, 2}].
+    [binary, {packet, 0}].
 
 start() ->
     tcp_client:batch_connect("127.0.0.1", 9999, tcp_opts(), client_socket_behavior_config_impl, 2).
